@@ -7,18 +7,14 @@ export default class SpeedIndicator extends React.Component {
         speed: React.PropTypes.number.isRequired,
     }
 
-    static defaultProps = {
-        speed: 'wer',
-    }
-
     render() {
         var { speed } = this.props;
 
         var speedStyle = {
           backgroundColor: 'red',
-          width: '30px',
-          height: '30px',
-          paddingTop: '5px',
+          width: '30',
+          height: '30',
+          paddingTop: '5',
           textAlign: 'center',
         };
 

@@ -13,8 +13,8 @@ export default class SpeedIndicatorGuideComponent extends React.Component {
                     <SpeedIndicator />
                 </SGSection>
 
-                <SGSection title="SpeedIndicator - with value property">
-                    <SpeedIndicator value="Content for the component" />
+                <SGSection title="SpeedIndicator - with speed property">
+                    <SpeedIndicator speed={77} />
                 </SGSection>
 
             </SGPage>
