@@ -9,12 +9,12 @@ export default class HelloWorldGuideComponent extends React.Component {
         return (
             <SGPage>
 
-                <SGSection title="HelloWorld - without properties">
+                <SGSection title="HelloWorld - with default properties">
                     <HelloWorld />
                 </SGSection>
 
-                <SGSection title="HelloWorld - with value property">
-                    <HelloWorld value="Content for the component" />
+                <SGSection title="HelloWorld - with new properties">
+                    <HelloWorld name={'New name'} text={'New text'} />
                 </SGSection>
 
             </SGPage>

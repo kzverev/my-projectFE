@@ -5,6 +5,7 @@ export default class HelloWorld extends React.Component {
 
     static propTypes = {
         text: React.PropTypes.string,
+        name: React.PropTypes.string,
     }
 
     static defaultProps = {
@@ -26,7 +27,7 @@ export default class HelloWorld extends React.Component {
         return (
             <div>
                 <div style={ background }>
-                    { text } <br />
+                    { text }
                 </div>
                 <div style={ nameStyle }>
                     { name }
