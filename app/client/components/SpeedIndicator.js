@@ -7,6 +7,12 @@ export default class SpeedIndicator extends React.Component {
         speed: React.PropTypes.number.isRequired,
     }
 
+    speedClicked() {
+      alert(this.props.speed)
+    }
+
+
+
     render() {
         var { speed } = this.props;
 
@@ -27,7 +33,7 @@ export default class SpeedIndicator extends React.Component {
         }
 
         return (
-            <div style={ speedStyle }>
+            <div style={ speedStyle } onClick={(e) => {this.speedClicked(e)}}>
                 {speed}
             </div>
         );
