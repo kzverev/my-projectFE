@@ -3,57 +3,58 @@ import React from 'react';
 
 export default class Clickr extends React.Component {
 
-    constructor(props) {
-      super(props);
-      this.state = {
+    state = {
         count: 0
-      }
-    }
+    };
 
     handleClickPlus1 = (e) => {
-      if (this.state.count > 19) {
+      var { count } = this.state;
+      var nextCount = count + 1;
+
+      if (nextCount <= 20) {
         this.setState({
-          count: 20
-        });
-      } else {
-        this.setState({
-          count: this.state.count + 1
+          count: nextCount,
         });
       }
     }
 
     handleClickPlus5 = (e) => {
-      if(this.state.count > 15) {
+      var { count } = this.state;
+      var nextCount = count + 5;
+
+      if (nextCount > 20) {
         this.setState({
-          count: 20
+          count: 20,
         });
       } else {
-        this.setState({
-          count: this.state.count + 5
+        this.setState ({
+          count: nextCount,
         });
       }
     }
 
     handleClickminus1 = (e) => {
-      if (this.state.count < -19) {
+      var { count } = this.state;
+      var nextCount = count - 1;
+
+      if (nextCount >= -20) {
         this.setState({
-          count: -20
-        });
-      } else {
-        this.setState({
-          count: this.state.count - 1
+          count: nextCount,
         });
       }
     }
 
     handleClickminus5 = (e) => {
-      if(this.state.count < -15) {
+      var { count } = this.state;
+      var nextCount = count - 5;
+
+      if (nextCount < -20) {
         this.setState({
-          count: -20
+          count: -20,
         });
       } else {
-        this.setState({
-          count: this.state.count - 5
+        this.setState ({
+          count: nextCount,
         });
       }
     }
