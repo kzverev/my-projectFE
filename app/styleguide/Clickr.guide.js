@@ -9,12 +9,8 @@ export default class ClickrGuideComponent extends React.Component {
         return (
             <SGPage>
 
-                <SGSection title="Clickr - without properties">
+                <SGSection title="Clickr component">
                     <Clickr />
-                </SGSection>
-
-                <SGSection title="Clickr - with value property">
-                    <Clickr value="Content for the component" />
                 </SGSection>
 
             </SGPage>
