@@ -7,57 +7,26 @@ export default class Clickr extends React.Component {
         count: 0
     };
 
-    handleClickPlus1 = (e) => {
-      var { count } = this.state;
-      var nextCount = count + 1;
+    handleClick = (increment) => {
+      return (e) => {
+        var { count } = this.state;
 
-      if (nextCount <= 20) {
-        this.setState({
-          count: nextCount,
-        });
+        var nextCount = count + increment;
+
+        if (nextCount < -20) {
+          this.setState({ count: -20});
+        }
+
+        if (nextCount > 20) {
+          this.setState({ count: 20});
+        }
+
+        if (nextCount >= -20 && nextCount <= 20) {
+          this.setState({ count: nextCount});
+        }
       }
     }
 
-    handleClickPlus5 = (e) => {
-      var { count } = this.state;
-      var nextCount = count + 5;
-
-      if (nextCount > 20) {
-        this.setState({
-          count: 20,
-        });
-      } else {
-        this.setState ({
-          count: nextCount,
-        });
-      }
-    }
-
-    handleClickminus1 = (e) => {
-      var { count } = this.state;
-      var nextCount = count - 1;
-
-      if (nextCount >= -20) {
-        this.setState({
-          count: nextCount,
-        });
-      }
-    }
-
-    handleClickminus5 = (e) => {
-      var { count } = this.state;
-      var nextCount = count - 5;
-
-      if (nextCount < -20) {
-        this.setState({
-          count: -20,
-        });
-      } else {
-        this.setState ({
-          count: nextCount,
-        });
-      }
-    }
 
     render() {
         var { count } = this.state;
@@ -81,15 +50,17 @@ export default class Clickr extends React.Component {
           counterStyle.backgroundColor = 'red'
         }
 
+         var { handleClick } = this;
+
         return (
             <div>
-              <button style={buttonStyle} onClick={this.handleClickminus5}>-5</button>
-              <button style={buttonStyle} onClick={this.handleClickminus1}>-1</button>
+              <button style={buttonStyle} onClick={handleClick(-5)}>-5</button>
+              <button style={buttonStyle} onClick={handleClick(-1)}>-1</button>
               <div style={counterStyle}>
                 {count}
               </div>
-              <button style={buttonStyle} onClick={this.handleClickPlus1}>+1</button>
-              <button style={buttonStyle} onClick={this.handleClickPlus5}>+5</button>
+              <button style={buttonStyle} onClick={handleClick(1)}>+1</button>
+              <button style={buttonStyle} onClick={handleClick(5)}>+5</button>
             </div>
         );
     }
