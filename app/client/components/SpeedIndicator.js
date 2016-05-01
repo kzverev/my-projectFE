@@ -12,7 +12,6 @@ export default class SpeedIndicator extends React.Component {
     render() {
 
         var { speed } = this.props;
-
         var { speedClicked } = this;
 
         var speedStyle = {
@@ -33,8 +32,6 @@ export default class SpeedIndicator extends React.Component {
           speedStyle.backgroundColor = 'yellow';
         }
 
-
-
         return (
             <div style={ speedStyle } onClick={speedClicked}>
                 {speed}
@@ -42,7 +39,7 @@ export default class SpeedIndicator extends React.Component {
         );
     }
 
-    speedClicked() {
+    speedClicked = (e) => {
       alert(this.props.speed);
     }
 }
