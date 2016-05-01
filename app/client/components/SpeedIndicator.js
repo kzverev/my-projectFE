@@ -7,8 +7,12 @@ export default class SpeedIndicator extends React.Component {
         speed: React.PropTypes.number.isRequired,
     }
 
+
+
     render() {
+
         var { speed } = this.props;
+        var { speedClicked } = this;
 
         var speedStyle = {
           backgroundColor: 'red',
@@ -17,6 +21,8 @@ export default class SpeedIndicator extends React.Component {
           paddingTop: '5',
           textAlign: 'center',
         };
+
+
 
         if (speed <= 20) {
           speedStyle.backgroundColor = 'blue';
@@ -27,9 +33,13 @@ export default class SpeedIndicator extends React.Component {
         }
 
         return (
-            <div style={ speedStyle }>
+            <div style={ speedStyle } onClick={speedClicked}>
                 {speed}
             </div>
         );
+    }
+
+    speedClicked = (e) => {
+      alert(this.props.speed);
     }
 }

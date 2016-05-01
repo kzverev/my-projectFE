@@ -10,19 +10,19 @@ export default class SpeedIndicatorGuideComponent extends React.Component {
             <SGPage>
 
                 <SGSection title="SpeedIndicator - with low speed property">
-                    <SpeedIndicator speed={14} />
+                    <SpeedIndicator speed={18} />
                 </SGSection>
 
                 <SGSection title="SpeedIndicator - with normal speed property">
-                    <SpeedIndicator speed={36} />
+                    <SpeedIndicator speed={33} />
                 </SGSection>
 
                 <SGSection title="SpeedIndicator - with high speed property">
-                    <SpeedIndicator speed={67} />
+                    <SpeedIndicator speed={72} />
                 </SGSection>
 
                 <SGSection title="SpeedIndicator - with dangerous speed property">
-                    <SpeedIndicator speed={90} />
+                    <SpeedIndicator speed={100} />
                 </SGSection>
 
             </SGPage>
